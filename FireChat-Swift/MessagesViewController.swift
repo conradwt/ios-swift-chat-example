@@ -11,7 +11,7 @@ import UIKit
 class MessagesViewController: JSQMessagesViewController {
     
     var user: FAUser?
-    
+e   
     var messages = [Message]()
     var avatars = Dictionary<String, UIImage>()
     var outgoingBubbleImageView = JSQMessagesBubbleImageFactory.outgoingMessageBubbleImageViewWithColor(UIColor.jsq_messageBubbleLightGrayColor())
@@ -21,7 +21,6 @@ class MessagesViewController: JSQMessagesViewController {
     var authRef: FirebaseSimpleLogin!
     
     // *** STEP 1: STORE FIREBASE REFERENCES
-    var ref: Firebase!
     var messagesRef: Firebase!
     // *** END STEP 1
     
@@ -95,8 +94,7 @@ class MessagesViewController: JSQMessagesViewController {
         setupTestModel()
         
         // *** STEP 2: SETUP FIREBASES
-        ref = Firebase(url: "https://swift-chat.firebaseio.com/")
-        messagesRef = ref.childByAppendingPath("messages")
+        messagesRef = Firebase(url: "https://swift-chat.firebaseio.com/messages")
         // *** END STEP 2
         
         // *** STEP 3: RECEIVE MESSAGES FROM FIREBASE
